@@ -1,12 +1,12 @@
 {
-    "name": "Cowswap xStocks Token List",
+    "name": "xStocks Token List",
     "timestamp": "2026-02-18T00:00:00.000000Z",
     "version": {
         "major": 1,
         "minor": 0,
         "patch": 0
     },
-    "logoURI": "https://docs.xstocks.fi/~gitbook/image?url=https%3A%2F%2F3077926259-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FDCdVAUr4qPUmZONgfTGR%252Fuploads%252FsuCc3gz9JQK3Y9xNo0Yz%252FxStocks%2520Logo%2520-%2520Brand%2520Color%25402x.svg%3Falt%3Dmedia%26token%3D48f9e71b-653e-482c-8f91-74a74a78468d&width=768&dpr=3&quality=100&sign=389e16d5&sv=2",
+    "logoURI": "https://xstocks.fi/apple-touch-icon.png",
     "tags": {
         "xStocks": {
             "name": "Tokenized by xStocks",
