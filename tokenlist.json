@@ -3,7 +3,7 @@
     "timestamp": "2026-02-18T00:00:00.000000Z",
     "version": {
         "major": 2,
-        "minor": 1,
+        "minor": 2,
         "patch": 0
     },
     "logoURI": "https://xstocks.fi/apple-touch-icon.png",
@@ -1375,6 +1375,618 @@
             "tags": [
                 "xStocks"
             ]
+        },
+        {
+            "chainId": 1,
+            "address": "0x4cbf89ed7bb30b8a860fa86d3c96e9c72931299b",
+            "name": "TBLL xStock",
+            "symbol": "TBLLx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/TBLLx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 42161,
+            "address": "0x4cbf89ed7bb30b8a860fa86d3c96e9c72931299b",
+            "name": "TBLL xStock",
+            "symbol": "TBLLx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/TBLLx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 56,
+            "address": "0x4cbf89ed7bb30b8a860fa86d3c96e9c72931299b",
+            "name": "TBLL xStock",
+            "symbol": "TBLLx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/TBLLx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 57073,
+            "address": "0x4cbf89ed7bb30b8a860fa86d3c96e9c72931299b",
+            "name": "TBLL xStock",
+            "symbol": "TBLLx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/TBLLx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 1,
+            "address": "0x548308e91ec9f285c7bff05295badbd56a6e4971",
+            "name": "Oracle xStock",
+            "symbol": "ORCLx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ORCLx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 42161,
+            "address": "0x548308e91ec9f285c7bff05295badbd56a6e4971",
+            "name": "Oracle xStock",
+            "symbol": "ORCLx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ORCLx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 56,
+            "address": "0x548308e91ec9f285c7bff05295badbd56a6e4971",
+            "name": "Oracle xStock",
+            "symbol": "ORCLx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ORCLx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 57073,
+            "address": "0x548308e91ec9f285c7bff05295badbd56a6e4971",
+            "name": "Oracle xStock",
+            "symbol": "ORCLx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ORCLx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 1,
+            "address": "0x1aad217b8f78dba5e6693460e8470f8b1a3977f3",
+            "name": "Strategy PP Variable xStock",
+            "symbol": "STRCx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/STRCx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 42161,
+            "address": "0x1aad217b8f78dba5e6693460e8470f8b1a3977f3",
+            "name": "Strategy PP Variable xStock",
+            "symbol": "STRCx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/STRCx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 56,
+            "address": "0x1aad217b8f78dba5e6693460e8470f8b1a3977f3",
+            "name": "Strategy PP Variable xStock",
+            "symbol": "STRCx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/STRCx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 57073,
+            "address": "0x1aad217b8f78dba5e6693460e8470f8b1a3977f3",
+            "name": "Strategy PP Variable xStock",
+            "symbol": "STRCx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/STRCx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 1,
+            "address": "0x80a77a372c1e12accda84299492f404902e2da67",
+            "name": "McDonald's xStock",
+            "symbol": "MCDx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/MCDx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 42161,
+            "address": "0x80a77a372c1e12accda84299492f404902e2da67",
+            "name": "McDonald's xStock",
+            "symbol": "MCDx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/MCDx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 56,
+            "address": "0x80a77a372c1e12accda84299492f404902e2da67",
+            "name": "McDonald's xStock",
+            "symbol": "MCDx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/MCDx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 57073,
+            "address": "0x80a77a372c1e12accda84299492f404902e2da67",
+            "name": "McDonald's xStock",
+            "symbol": "MCDx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/MCDx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 1,
+            "address": "0xa6a65ac27e76cd53cb790473e4345c46e5ebf961",
+            "name": "Netflix xStock",
+            "symbol": "NFLXx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/NFLXx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 42161,
+            "address": "0xa6a65ac27e76cd53cb790473e4345c46e5ebf961",
+            "name": "Netflix xStock",
+            "symbol": "NFLXx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/NFLXx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 56,
+            "address": "0xa6a65ac27e76cd53cb790473e4345c46e5ebf961",
+            "name": "Netflix xStock",
+            "symbol": "NFLXx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/NFLXx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 57073,
+            "address": "0xa6a65ac27e76cd53cb790473e4345c46e5ebf961",
+            "name": "Netflix xStock",
+            "symbol": "NFLXx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/NFLXx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 1,
+            "address": "0x3ee7e9b3a992fd23cd1c363b0e296856b04ab149",
+            "name": "Goldman Sachs xStock",
+            "symbol": "GSx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/GSx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 42161,
+            "address": "0x3ee7e9b3a992fd23cd1c363b0e296856b04ab149",
+            "name": "Goldman Sachs xStock",
+            "symbol": "GSx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/GSx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 56,
+            "address": "0x3ee7e9b3a992fd23cd1c363b0e296856b04ab149",
+            "name": "Goldman Sachs xStock",
+            "symbol": "GSx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/GSx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 57073,
+            "address": "0x3ee7e9b3a992fd23cd1c363b0e296856b04ab149",
+            "name": "Goldman Sachs xStock",
+            "symbol": "GSx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/GSx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 1,
+            "address": "0xbc7170a1280be28513b4e940c681537eb25e39f4",
+            "name": "Comcast xStock",
+            "symbol": "CMCSAx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CMCSAx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 42161,
+            "address": "0xbc7170a1280be28513b4e940c681537eb25e39f4",
+            "name": "Comcast xStock",
+            "symbol": "CMCSAx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CMCSAx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 56,
+            "address": "0xbc7170a1280be28513b4e940c681537eb25e39f4",
+            "name": "Comcast xStock",
+            "symbol": "CMCSAx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CMCSAx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 57073,
+            "address": "0xbc7170a1280be28513b4e940c681537eb25e39f4",
+            "name": "Comcast xStock",
+            "symbol": "CMCSAx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CMCSAx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 1,
+            "address": "0x314938c596f5ce31c3f75307d2979338c346d7f2",
+            "name": "Bank of America xStock",
+            "symbol": "BACx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BACx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 42161,
+            "address": "0x314938c596f5ce31c3f75307d2979338c346d7f2",
+            "name": "Bank of America xStock",
+            "symbol": "BACx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BACx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 56,
+            "address": "0x314938c596f5ce31c3f75307d2979338c346d7f2",
+            "name": "Bank of America xStock",
+            "symbol": "BACx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BACx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 57073,
+            "address": "0x314938c596f5ce31c3f75307d2979338c346d7f2",
+            "name": "Bank of America xStock",
+            "symbol": "BACx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BACx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 1,
+            "address": "0xeaad46f4146ded5a47b55aa7f6c48c191deaec88",
+            "name": "Marvell xStock",
+            "symbol": "MRVLx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/MRVLx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 42161,
+            "address": "0xeaad46f4146ded5a47b55aa7f6c48c191deaec88",
+            "name": "Marvell xStock",
+            "symbol": "MRVLx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/MRVLx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 56,
+            "address": "0xeaad46f4146ded5a47b55aa7f6c48c191deaec88",
+            "name": "Marvell xStock",
+            "symbol": "MRVLx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/MRVLx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 57073,
+            "address": "0xeaad46f4146ded5a47b55aa7f6c48c191deaec88",
+            "name": "Marvell xStock",
+            "symbol": "MRVLx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/MRVLx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 1,
+            "address": "0xd9913208647671fe0f48f7f260076b2c6f310aac",
+            "name": "International Business Machines xStock",
+            "symbol": "IBMx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/IBMx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 42161,
+            "address": "0xd9913208647671fe0f48f7f260076b2c6f310aac",
+            "name": "International Business Machines xStock",
+            "symbol": "IBMx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/IBMx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 56,
+            "address": "0xd9913208647671fe0f48f7f260076b2c6f310aac",
+            "name": "International Business Machines xStock",
+            "symbol": "IBMx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/IBMx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 57073,
+            "address": "0xd9913208647671fe0f48f7f260076b2c6f310aac",
+            "name": "International Business Machines xStock",
+            "symbol": "IBMx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/IBMx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 1,
+            "address": "0x214151022c2a5e380ab80cdac31f23ae554a7345",
+            "name": "CrowdStrike xStock",
+            "symbol": "CRWDx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CRWDx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 42161,
+            "address": "0x214151022c2a5e380ab80cdac31f23ae554a7345",
+            "name": "CrowdStrike xStock",
+            "symbol": "CRWDx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CRWDx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 56,
+            "address": "0x214151022c2a5e380ab80cdac31f23ae554a7345",
+            "name": "CrowdStrike xStock",
+            "symbol": "CRWDx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CRWDx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 57073,
+            "address": "0x214151022c2a5e380ab80cdac31f23ae554a7345",
+            "name": "CrowdStrike xStock",
+            "symbol": "CRWDx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CRWDx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 1,
+            "address": "0x6a668332825450acd2e449372057d31b3de16a1e",
+            "name": "Core MSCI Emerging Markets xStock",
+            "symbol": "IEMGx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/IEMGx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 42161,
+            "address": "0x6a668332825450acd2e449372057d31b3de16a1e",
+            "name": "Core MSCI Emerging Markets xStock",
+            "symbol": "IEMGx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/IEMGx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 56,
+            "address": "0x6a668332825450acd2e449372057d31b3de16a1e",
+            "name": "Core MSCI Emerging Markets xStock",
+            "symbol": "IEMGx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/IEMGx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 57073,
+            "address": "0x6a668332825450acd2e449372057d31b3de16a1e",
+            "name": "Core MSCI Emerging Markets xStock",
+            "symbol": "IEMGx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/IEMGx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 1,
+            "address": "0x15059c599c16fd8f70b633ade165502d6402cd49",
+            "name": "Linde xStock",
+            "symbol": "LINx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/LINx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 42161,
+            "address": "0x15059c599c16fd8f70b633ade165502d6402cd49",
+            "name": "Linde xStock",
+            "symbol": "LINx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/LINx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 56,
+            "address": "0x15059c599c16fd8f70b633ade165502d6402cd49",
+            "name": "Linde xStock",
+            "symbol": "LINx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/LINx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 57073,
+            "address": "0x15059c599c16fd8f70b633ade165502d6402cd49",
+            "name": "Linde xStock",
+            "symbol": "LINx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/LINx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 1,
+            "address": "0x4a4073f2eaf299a1be22254dcd2c41727f6f54a2",
+            "name": "Salesforce xStock",
+            "symbol": "CRMx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CRMx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 42161,
+            "address": "0x4a4073f2eaf299a1be22254dcd2c41727f6f54a2",
+            "name": "Salesforce xStock",
+            "symbol": "CRMx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CRMx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 56,
+            "address": "0x4a4073f2eaf299a1be22254dcd2c41727f6f54a2",
+            "name": "Salesforce xStock",
+            "symbol": "CRMx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CRMx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 57073,
+            "address": "0x4a4073f2eaf299a1be22254dcd2c41727f6f54a2",
+            "name": "Salesforce xStock",
+            "symbol": "CRMx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/CRMx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 1,
+            "address": "0xdba228936f4079daf9aa906fd48a87f2300405f4",
+            "name": "Danaher xStock",
+            "symbol": "DHRx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/DHRx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 42161,
+            "address": "0xdba228936f4079daf9aa906fd48a87f2300405f4",
+            "name": "Danaher xStock",
+            "symbol": "DHRx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/DHRx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 56,
+            "address": "0xdba228936f4079daf9aa906fd48a87f2300405f4",
+            "name": "Danaher xStock",
+            "symbol": "DHRx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/DHRx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 57073,
+            "address": "0xdba228936f4079daf9aa906fd48a87f2300405f4",
+            "name": "Danaher xStock",
+            "symbol": "DHRx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/DHRx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 1,
+            "address": "0x5d642505fe1a28897eb3baba665f454755d8daa2",
+            "name": "AstraZeneca xStock",
+            "symbol": "AZNx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/AZNx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 42161,
+            "address": "0x5d642505fe1a28897eb3baba665f454755d8daa2",
+            "name": "AstraZeneca xStock",
+            "symbol": "AZNx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/AZNx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 56,
+            "address": "0x5d642505fe1a28897eb3baba665f454755d8daa2",
+            "name": "AstraZeneca xStock",
+            "symbol": "AZNx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/AZNx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 57073,
+            "address": "0x5d642505fe1a28897eb3baba665f454755d8daa2",
+            "name": "AstraZeneca xStock",
+            "symbol": "AZNx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/AZNx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 1,
+            "address": "0xe5f6d3b2405abdfe6f660e63202b25d23763160d",
+            "name": "Gamestop xStock",
+            "symbol": "GMEx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/GMEx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 42161,
+            "address": "0xe5f6d3b2405abdfe6f660e63202b25d23763160d",
+            "name": "Gamestop xStock",
+            "symbol": "GMEx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/GMEx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 56,
+            "address": "0xe5f6d3b2405abdfe6f660e63202b25d23763160d",
+            "name": "Gamestop xStock",
+            "symbol": "GMEx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/GMEx.png",
+            "tags": ["xStocks"]
+        },
+        {
+            "chainId": 57073,
+            "address": "0xe5f6d3b2405abdfe6f660e63202b25d23763160d",
+            "name": "Gamestop xStock",
+            "symbol": "GMEx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/GMEx.png",
+            "tags": ["xStocks"]
         }
     ]
 }
