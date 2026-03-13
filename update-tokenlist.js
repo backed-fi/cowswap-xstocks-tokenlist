@@ -152,6 +152,48 @@ function calculateVersionBump(oldTokens, newTokens, currentVersion) {
 }
 
 /**
+ * Analyze which symbols are missing on certain networks
+ * Returns a map of symbol -> array of networks it's missing from
+ */
+function analyzeNetworkCoverage(tokens) {
+  // Group tokens by symbol
+  const symbolToChains = new Map();
+  tokens.forEach(token => {
+    if (!symbolToChains.has(token.symbol)) {
+      symbolToChains.set(token.symbol, new Set());
+    }
+    symbolToChains.get(token.symbol).add(token.chainId);
+  });
+
+  // Get all networks that have at least one token
+  const allNetworks = new Set(tokens.map(t => t.chainId));
+
+
+  // Find symbols that are not on all networks
+  const missingByNetwork = {};
+  for (const chainId of allNetworks) {
+    const networkName = CHAIN_NAMES[chainId] || `Chain-${chainId}`;
+    const missingSymbols = [];
+
+    for (const [symbol, chains] of symbolToChains) {
+      if (!chains.has(chainId)) {
+        // Find which networks DO have this symbol
+        const presentOn = Array.from(chains)
+          .map(id => CHAIN_NAMES[id] || `Chain-${id}`)
+          .sort();
+        missingSymbols.push({ symbol, presentOn });
+      }
+    }
+
+    if (missingSymbols.length > 0) {
+      missingByNetwork[networkName] = missingSymbols;
+    }
+  }
+
+  return { missingByNetwork, totalSymbols: symbolToChains.size };
+}
+
+/**
  * Update README.md with current token statistics
  */
 function updateReadme(tokens) {
@@ -171,6 +213,9 @@ function updateReadme(tokens) {
     return acc;
   }, {});
 
+  // Analyze network coverage
+  const { missingByNetwork, totalSymbols } = analyzeNetworkCoverage(tokens);
+
   // Build new statistics table
   let statsTable = '| Network | Tokens |\n|---------|--------|\n';
   Object.entries(countPerChain)
@@ -178,17 +223,48 @@ function updateReadme(tokens) {
     .forEach(([name, count]) => {
       statsTable += `| ${name} | ${count} |\n`;
     });
+  statsTable += `|---------|--------|\n`;
   statsTable += `| **Total** | **${tokens.length}** |`;
 
+  // Build network coverage section if there are missing tokens
+  let coverageSection = '';
+  if (Object.keys(missingByNetwork).length > 0) {
+    coverageSection = '\n\n### Network Coverage Gaps\n\n';
+    coverageSection += `Unique symbols: ${totalSymbols}\n\n`;
+
+    // Sort networks by number of missing tokens (most missing first)
+    const sortedNetworks = Object.entries(missingByNetwork)
+      .sort((a, b) => b[1].length - a[1].length);
+
+    for (const [network, missing] of sortedNetworks) {
+      const symbols = missing.map(m => m.symbol).join(', ');
+      coverageSection += `- **${network}** missing ${missing.length}: ${symbols}\n`;
+    }
+  }
+
   // Replace the statistics table in README (handle both \n and \r\n line endings)
-  const statsPattern = /## Token Statistics\r?\n\r?\n\| Network \| Tokens \|\r?\n\|[-]+\|[-]+\|\r?\n[\s\S]*?\| \*\*Total\*\* \| \*\*\d+\*\* \|/;
+  // Match up to either the next ## section or end of coverage gaps section
+  // Note: table may have optional separator row before Total
+  const statsPattern = /## Token Statistics\r?\n\r?\n\| Network \| Tokens \|\r?\n\|[-]+\|[-]+\|\r?\n[\s\S]*?(\|[-]+\|[-]+\|\r?\n)?\| \*\*Total\*\* \| \*\*\d+\*\* \|(\r?\n\r?\n### Network Coverage Gaps\r?\n\r?\n[\s\S]*?(?=\r?\n\r?\n##|\r?\n\r?\n$|$))?/;
 
   if (statsPattern.test(readme)) {
-    readme = readme.replace(statsPattern, `## Token Statistics\n\n${statsTable}`);
+    readme = readme.replace(statsPattern, `## Token Statistics\n\n${statsTable}${coverageSection}`);
     fs.writeFileSync(readmePath, readme);
     console.log('Updated README.md');
   } else {
     console.log('Token Statistics section not found in README.md, skipping update');
+  }
+
+  // Also log coverage gaps to console
+  if (Object.keys(missingByNetwork).length > 0) {
+    console.log('\n=== Network Coverage Gaps ===');
+    console.log(`Unique symbols: ${totalSymbols}`);
+    const sortedNetworks = Object.entries(missingByNetwork)
+      .sort((a, b) => b[1].length - a[1].length);
+    for (const [network, missing] of sortedNetworks) {
+      const symbols = missing.map(m => m.symbol).join(', ');
+      console.log(`${network} missing ${missing.length}: ${symbols}`);
+    }
   }
 }
 

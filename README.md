@@ -23,6 +23,10 @@ Add the token list URL to your DEX or wallet that supports Uniswap Token Lists.
 Use the `update-tokenlist.js` script to update tokens:
 
 ```bash
+# Using npm script (reads from public_atomic_tokenlist.json)
+npm run update
+
+# Or explicitly with node
 node update-tokenlist.js <path-to-new-tokens.json>
 ```
 
