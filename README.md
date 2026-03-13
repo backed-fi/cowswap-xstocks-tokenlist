@@ -8,11 +8,17 @@ Token list for xStocks tokenized assets, following the [Uniswap Token Lists](htt
 
 | Network | Tokens |
 |---------|--------|
-| Ink | 42 |
-| Ethereum | 37 |
-| Arbitrum | 36 |
-| BinanceSmartChain | 36 |
-| **Total** | **151** |
+| Ethereum | 63 |
+| Ink | 62 |
+|---------|--------|
+| **Total** | **125** |
+
+### Network Coverage Gaps
+
+Unique symbols: 63
+
+- **Ink** missing 1: SLVx
+
 
 ## Usage
 
