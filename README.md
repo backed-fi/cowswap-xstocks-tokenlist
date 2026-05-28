@@ -8,24 +8,24 @@ Token list for xStocks tokenized assets, following the [Uniswap Token Lists](htt
 
 | Network | Tokens |
 |---------|--------|
-| Ethereum | 98 |
+| Ethereum | 128 |
+| BinanceSmartChain | 98 |
 | Ink | 97 |
-| Mantle | 92 |
+| Mantle | 91 |
 | Arbitrum | 83 |
 | HyperEVM | 83 |
-| BinanceSmartChain | 78 |
 |---------|--------|
-| **Total** | **531** |
+| **Total** | **580** |
 
 ### Network Coverage Gaps
 
-Unique symbols: 98
+Unique symbols: 128
 
-- **BinanceSmartChain** missing 20: MOOx, XOPx, VGKx, ITAx, VUGx, SMHx, URAx, XLEx, VCXx, SNDKx, CEGx, SMCIx, DELLx, USARx, UUUUx, PPLTx, PALLx, COPXx, BTGOx, SLVx
-- **Arbitrum** missing 15: MOOx, XOPx, VGKx, ITAx, VUGx, SMHx, URAx, XLEx, VCXx, SNDKx, CEGx, SMCIx, DELLx, USARx, UUUUx
-- **HyperEVM** missing 15: MOOx, XOPx, VGKx, ITAx, VUGx, SMHx, URAx, XLEx, VCXx, SNDKx, CEGx, SMCIx, DELLx, USARx, UUUUx
-- **Mantle** missing 6: ITAx, PPLTx, PALLx, COPXx, BTGOx, SLVx
-- **Ink** missing 1: SLVx
+- **Arbitrum** missing 45: ENHAx, EWYx, DAXx, SATAx, SOXXx, EWUx, EWGx, EWQx, BITXx, VOOx, NLRx, GDXx, FEZx, JAAAx, JPSTx, FLQMx, USPXx, FSMLx, FLBLx, IQMx, YLDEx, FAAAx, SOXLx, VIDAx, RCATx, ONDSx, IRENx, HIMSx, NETx, LNGx, MOOx, XOPx, VGKx, ITAx, VUGx, SMHx, URAx, XLEx, VCXx, SNDKx, CEGx, SMCIx, DELLx, USARx, UUUUx
+- **HyperEVM** missing 45: ENHAx, EWYx, DAXx, SATAx, SOXXx, EWUx, EWGx, EWQx, BITXx, VOOx, NLRx, GDXx, FEZx, JAAAx, JPSTx, FLQMx, USPXx, FSMLx, FLBLx, IQMx, YLDEx, FAAAx, SOXLx, VIDAx, RCATx, ONDSx, IRENx, HIMSx, NETx, LNGx, MOOx, XOPx, VGKx, ITAx, VUGx, SMHx, URAx, XLEx, VCXx, SNDKx, CEGx, SMCIx, DELLx, USARx, UUUUx
+- **Mantle** missing 37: ENHAx, EWYx, DAXx, SATAx, SOXXx, EWUx, EWGx, EWQx, BITXx, VOOx, NLRx, GDXx, FEZx, JAAAx, JPSTx, FLQMx, USPXx, FSMLx, FLBLx, IQMx, YLDEx, FAAAx, SOXLx, VIDAx, RCATx, ONDSx, IRENx, HIMSx, NETx, LNGx, ITAx, PPLTx, PALLx, COPXx, BTGOx, SLVx, NFLXx
+- **Ink** missing 31: ENHAx, EWYx, DAXx, SATAx, SOXXx, EWUx, EWGx, EWQx, BITXx, VOOx, NLRx, GDXx, FEZx, JAAAx, JPSTx, FLQMx, USPXx, FSMLx, FLBLx, IQMx, YLDEx, FAAAx, SOXLx, VIDAx, RCATx, ONDSx, IRENx, HIMSx, NETx, LNGx, SLVx
+- **BinanceSmartChain** missing 30: ENHAx, EWYx, DAXx, SATAx, SOXXx, EWUx, EWGx, EWQx, BITXx, VOOx, NLRx, GDXx, FEZx, JAAAx, JPSTx, FLQMx, USPXx, FSMLx, FLBLx, IQMx, YLDEx, FAAAx, SOXLx, VIDAx, RCATx, ONDSx, IRENx, HIMSx, NETx, LNGx
 
 
 ## Usage

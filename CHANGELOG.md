@@ -2,6 +2,63 @@
 
 All notable changes to the xStocks Token List.
 
+## [4.0.0] - 2026-05-28
+
+### Added
+- ENHAx:Ethereum
+- EWYx:Ethereum
+- DAXx:Ethereum
+- SATAx:Ethereum
+- SOXXx:Ethereum
+- EWUx:Ethereum
+- EWGx:Ethereum
+- EWQx:Ethereum
+- BITXx:Ethereum
+- VOOx:Ethereum
+- NLRx:Ethereum
+- GDXx:Ethereum
+- FEZx:Ethereum
+- JAAAx:Ethereum
+- JPSTx:Ethereum
+- FLQMx:Ethereum
+- USPXx:Ethereum
+- FSMLx:Ethereum
+- FLBLx:Ethereum
+- IQMx:Ethereum
+- YLDEx:Ethereum
+- FAAAx:Ethereum
+- SOXLx:Ethereum
+- VIDAx:Ethereum
+- RCATx:Ethereum
+- ONDSx:Ethereum
+- IRENx:Ethereum
+- HIMSx:Ethereum
+- NETx:Ethereum
+- LNGx:Ethereum
+- MOOx:BinanceSmartChain
+- XOPx:BinanceSmartChain
+- VGKx:BinanceSmartChain
+- ITAx:BinanceSmartChain
+- VUGx:BinanceSmartChain
+- SMHx:BinanceSmartChain
+- URAx:BinanceSmartChain
+- XLEx:BinanceSmartChain
+- VCXx:BinanceSmartChain
+- SNDKx:BinanceSmartChain
+- CEGx:BinanceSmartChain
+- SMCIx:BinanceSmartChain
+- DELLx:BinanceSmartChain
+- USARx:BinanceSmartChain
+- UUUUx:BinanceSmartChain
+- PPLTx:BinanceSmartChain
+- PALLx:BinanceSmartChain
+- COPXx:BinanceSmartChain
+- BTGOx:BinanceSmartChain
+- SLVx:BinanceSmartChain
+
+### Removed
+- NFLXx:Mantle
+
 ## [3.1.0] - 2026-04-28
 
 ### Added
