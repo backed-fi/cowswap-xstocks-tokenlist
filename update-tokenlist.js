@@ -115,7 +115,9 @@ const CHAIN_IDS = {
   BinanceSmartChain: 56,
   Gnosis: 100,
   Polygon: 137,
-  Ethereum: 1
+  Ethereum: 1,
+  XLayer: 196,
+  Optimism: 10
 };
 
 // Reverse lookup: chainId -> network name
