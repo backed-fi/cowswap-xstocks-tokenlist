@@ -8,22 +8,22 @@ Token list for xStocks tokenized assets, following the [Uniswap Token Lists](htt
 
 | Network | Tokens |
 |---------|--------|
-| Ethereum | 128 |
-| XLayer | 128 |
-| BinanceSmartChain | 99 |
-| Ink | 98 |
-| Mantle | 92 |
-| HyperEVM | 84 |
-| Arbitrum | 84 |
+| Ethereum | 129 |
+| XLayer | 129 |
+| BinanceSmartChain | 100 |
+| Ink | 99 |
+| Mantle | 93 |
+| Arbitrum | 85 |
+| HyperEVM | 85 |
 |---------|--------|
-| **Total** | **713** |
+| **Total** | **720** |
 
 ### Network Coverage Gaps
 
-Unique symbols: 129
+Unique symbols: 130
 
-- **HyperEVM** missing 45: ENHAx, EWYx, DAXx, SATAx, SOXXx, EWUx, EWGx, EWQx, BITXx, VOOx, NLRx, GDXx, FEZx, JAAAx, JPSTx, FLQMx, USPXx, FSMLx, FLBLx, IQMx, YLDEx, FAAAx, SOXLx, VIDAx, RCATx, ONDSx, IRENx, HIMSx, NETx, LNGx, MOOx, XOPx, VGKx, ITAx, VUGx, SMHx, URAx, XLEx, VCXx, SNDKx, CEGx, SMCIx, DELLx, USARx, UUUUx
 - **Arbitrum** missing 45: ENHAx, EWYx, DAXx, SATAx, SOXXx, EWUx, EWGx, EWQx, BITXx, VOOx, NLRx, GDXx, FEZx, JAAAx, JPSTx, FLQMx, USPXx, FSMLx, FLBLx, IQMx, YLDEx, FAAAx, SOXLx, VIDAx, RCATx, ONDSx, IRENx, HIMSx, NETx, LNGx, MOOx, XOPx, VGKx, ITAx, VUGx, SMHx, URAx, XLEx, VCXx, SNDKx, CEGx, SMCIx, DELLx, USARx, UUUUx
+- **HyperEVM** missing 45: ENHAx, EWYx, DAXx, SATAx, SOXXx, EWUx, EWGx, EWQx, BITXx, VOOx, NLRx, GDXx, FEZx, JAAAx, JPSTx, FLQMx, USPXx, FSMLx, FLBLx, IQMx, YLDEx, FAAAx, SOXLx, VIDAx, RCATx, ONDSx, IRENx, HIMSx, NETx, LNGx, MOOx, XOPx, VGKx, ITAx, VUGx, SMHx, URAx, XLEx, VCXx, SNDKx, CEGx, SMCIx, DELLx, USARx, UUUUx
 - **Mantle** missing 37: ENHAx, EWYx, DAXx, SATAx, SOXXx, EWUx, EWGx, EWQx, BITXx, VOOx, NLRx, GDXx, FEZx, JAAAx, JPSTx, FLQMx, USPXx, FSMLx, FLBLx, IQMx, YLDEx, FAAAx, SOXLx, VIDAx, RCATx, ONDSx, IRENx, HIMSx, NETx, LNGx, ITAx, PPLTx, PALLx, COPXx, BTGOx, SLVx, NFLXx
 - **Ink** missing 31: ENHAx, EWYx, DAXx, SATAx, SOXXx, EWUx, EWGx, EWQx, BITXx, VOOx, NLRx, GDXx, FEZx, JAAAx, JPSTx, FLQMx, USPXx, FSMLx, FLBLx, IQMx, YLDEx, FAAAx, SOXLx, VIDAx, RCATx, ONDSx, IRENx, HIMSx, NETx, LNGx, SLVx
 - **BinanceSmartChain** missing 30: ENHAx, EWYx, DAXx, SATAx, SOXXx, EWUx, EWGx, EWQx, BITXx, VOOx, NLRx, GDXx, FEZx, JAAAx, JPSTx, FLQMx, USPXx, FSMLx, FLBLx, IQMx, YLDEx, FAAAx, SOXLx, VIDAx, RCATx, ONDSx, IRENx, HIMSx, NETx, LNGx

@@ -2,6 +2,17 @@
 
 All notable changes to the xStocks Token List.
 
+## [4.2.0] - 2026-06-09
+
+### Added
+- SPCXx:Ethereum
+- SPCXx:Arbitrum
+- SPCXx:BinanceSmartChain
+- SPCXx:Mantle
+- SPCXx:Ink
+- SPCXx:HyperEVM
+- SPCXx:XLayer
+
 ## [4.1.0] - 2026-06-08
 
 ### Added
