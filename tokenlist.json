@@ -1,9 +1,9 @@
 {
     "name": "xStocks Token List",
-    "timestamp": "2026-06-08T18:38:25.898Z",
+    "timestamp": "2026-06-09T15:35:59.132Z",
     "version": {
         "major": 4,
-        "minor": 1,
+        "minor": 2,
         "patch": 0
     },
     "logoURI": "https://xstocks.fi/apple-touch-icon.png",
@@ -14,6 +14,83 @@
         }
     },
     "tokens": [
+        {
+            "chainId": 1,
+            "address": "0x68fa48b1c2fe52b3d776e1953e0e782b5044ce28",
+            "name": "SpaceX xStock",
+            "symbol": "SPCXx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SPCXx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 42161,
+            "address": "0x68fa48b1c2fe52b3d776e1953e0e782b5044ce28",
+            "name": "SpaceX xStock",
+            "symbol": "SPCXx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SPCXx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 56,
+            "address": "0x68fa48b1c2fe52b3d776e1953e0e782b5044ce28",
+            "name": "SpaceX xStock",
+            "symbol": "SPCXx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SPCXx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 5000,
+            "address": "0x68fa48b1c2fe52b3d776e1953e0e782b5044ce28",
+            "name": "SpaceX xStock",
+            "symbol": "SPCXx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SPCXx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 57073,
+            "address": "0x68fa48b1c2fe52b3d776e1953e0e782b5044ce28",
+            "name": "SpaceX xStock",
+            "symbol": "SPCXx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SPCXx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 999,
+            "address": "0x68fa48b1c2fe52b3d776e1953e0e782b5044ce28",
+            "name": "SpaceX xStock",
+            "symbol": "SPCXx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SPCXx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 196,
+            "address": "0x68fa48b1c2fe52b3d776e1953e0e782b5044ce28",
+            "name": "SpaceX xStock",
+            "symbol": "SPCXx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SPCXx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
         {
             "chainId": 999,
             "address": "0xd5859517180e639d50003fdb434e690ab1fbd21b",
