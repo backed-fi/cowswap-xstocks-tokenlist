@@ -2,6 +2,30 @@
 
 All notable changes to the xStocks Token List.
 
+## [4.3.0] - 2026-06-26
+
+### Added
+- BSPx:Ethereum
+- BSPx:Arbitrum
+- BSPx:BinanceSmartChain
+- BSPx:Ink
+- BSPx:HyperEVM
+- BSPx:Optimism
+- BSPx:XLayer
+- SPCXx:Optimism
+- USPXx:BinanceSmartChain
+- USPXx:Mantle
+- USPXx:HyperEVM
+- USPXx:Ink
+- USPXx:Optimism
+- WENx:XLayer
+- WENx:Arbitrum
+- WENx:Ethereum
+- WENx:BinanceSmartChain
+- WENx:HyperEVM
+- WENx:Ink
+- WENx:Mantle
+
 ## [4.2.0] - 2026-06-09
 
 ### Added
