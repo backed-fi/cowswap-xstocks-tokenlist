@@ -1,9 +1,9 @@
 {
     "name": "xStocks Token List",
-    "timestamp": "2026-06-26T18:01:06.141Z",
+    "timestamp": "2026-07-06T23:40:38.883Z",
     "version": {
-        "major": 4,
-        "minor": 3,
+        "major": 5,
+        "minor": 0,
         "patch": 0
     },
     "logoURI": "https://xstocks.fi/apple-touch-icon.png",
@@ -16,6 +16,94 @@
     "tokens": [
         {
             "chainId": 1,
+            "address": "0x58100046a4afcd4ee4fadbd4244f3f895a341c56",
+            "name": "SK hynix xStock",
+            "symbol": "SKHYx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SKHYx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 42161,
+            "address": "0x58100046a4afcd4ee4fadbd4244f3f895a341c56",
+            "name": "SK hynix xStock",
+            "symbol": "SKHYx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SKHYx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 56,
+            "address": "0x58100046a4afcd4ee4fadbd4244f3f895a341c56",
+            "name": "SK hynix xStock",
+            "symbol": "SKHYx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SKHYx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 57073,
+            "address": "0x58100046a4afcd4ee4fadbd4244f3f895a341c56",
+            "name": "SK hynix xStock",
+            "symbol": "SKHYx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SKHYx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 999,
+            "address": "0x58100046a4afcd4ee4fadbd4244f3f895a341c56",
+            "name": "SK hynix xStock",
+            "symbol": "SKHYx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SKHYx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 5000,
+            "address": "0x58100046a4afcd4ee4fadbd4244f3f895a341c56",
+            "name": "SK hynix xStock",
+            "symbol": "SKHYx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SKHYx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 10,
+            "address": "0x58100046a4afcd4ee4fadbd4244f3f895a341c56",
+            "name": "SK hynix xStock",
+            "symbol": "SKHYx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SKHYx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 196,
+            "address": "0x58100046a4afcd4ee4fadbd4244f3f895a341c56",
+            "name": "SK hynix xStock",
+            "symbol": "SKHYx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SKHYx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 5000,
             "address": "0x7796f4e23a62ef3653829c21032a9e24beaf4cf5",
             "name": "Bending Spoons xStock",
             "symbol": "BSPx",
@@ -48,7 +136,29 @@
             ]
         },
         {
+            "chainId": 196,
+            "address": "0x7796f4e23a62ef3653829c21032a9e24beaf4cf5",
+            "name": "Bending Spoons xStock",
+            "symbol": "BSPx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BSPx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
             "chainId": 57073,
+            "address": "0x7796f4e23a62ef3653829c21032a9e24beaf4cf5",
+            "name": "Bending Spoons xStock",
+            "symbol": "BSPx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BSPx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 1,
             "address": "0x7796f4e23a62ef3653829c21032a9e24beaf4cf5",
             "name": "Bending Spoons xStock",
             "symbol": "BSPx",
@@ -70,23 +180,78 @@
             ]
         },
         {
-            "chainId": 10,
-            "address": "0x7796f4e23a62ef3653829c21032a9e24beaf4cf5",
-            "name": "Bending Spoons xStock",
-            "symbol": "BSPx",
+            "chainId": 42161,
+            "address": "0x1f2c8792148e4dc81a86109504810f2d5f2f26e4",
+            "name": "RoboStrategy xStock",
+            "symbol": "BOTx",
             "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BSPx.png",
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BOTx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 56,
+            "address": "0x1f2c8792148e4dc81a86109504810f2d5f2f26e4",
+            "name": "RoboStrategy xStock",
+            "symbol": "BOTx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BOTx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 57073,
+            "address": "0x1f2c8792148e4dc81a86109504810f2d5f2f26e4",
+            "name": "RoboStrategy xStock",
+            "symbol": "BOTx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BOTx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 1,
+            "address": "0x1f2c8792148e4dc81a86109504810f2d5f2f26e4",
+            "name": "RoboStrategy xStock",
+            "symbol": "BOTx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BOTx.png",
             "tags": [
                 "xStocks"
             ]
         },
         {
             "chainId": 196,
-            "address": "0x7796f4e23a62ef3653829c21032a9e24beaf4cf5",
-            "name": "Bending Spoons xStock",
-            "symbol": "BSPx",
+            "address": "0x1f2c8792148e4dc81a86109504810f2d5f2f26e4",
+            "name": "RoboStrategy xStock",
+            "symbol": "BOTx",
             "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BSPx.png",
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BOTx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 999,
+            "address": "0x1f2c8792148e4dc81a86109504810f2d5f2f26e4",
+            "name": "RoboStrategy xStock",
+            "symbol": "BOTx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BOTx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 5000,
+            "address": "0x1f2c8792148e4dc81a86109504810f2d5f2f26e4",
+            "name": "RoboStrategy xStock",
+            "symbol": "BOTx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BOTx.png",
             "tags": [
                 "xStocks"
             ]
@@ -2622,28 +2787,6 @@
             ]
         },
         {
-            "chainId": 999,
-            "address": "0x22e1991e5f82736a2a990322a46aac0e95826c5b",
-            "name": "Bit Digital xStock",
-            "symbol": "BTBTx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BTBTx.png",
-            "tags": [
-                "xStocks"
-            ]
-        },
-        {
-            "chainId": 196,
-            "address": "0x22e1991e5f82736a2a990322a46aac0e95826c5b",
-            "name": "Bit Digital xStock",
-            "symbol": "BTBTx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BTBTx.png",
-            "tags": [
-                "xStocks"
-            ]
-        },
-        {
             "chainId": 1,
             "address": "0x22e1991e5f82736a2a990322a46aac0e95826c5b",
             "name": "Bit Digital xStock",
@@ -2655,7 +2798,40 @@
             ]
         },
         {
+            "chainId": 57073,
+            "address": "0x22e1991e5f82736a2a990322a46aac0e95826c5b",
+            "name": "Bit Digital xStock",
+            "symbol": "BTBTx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BTBTx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 999,
+            "address": "0x22e1991e5f82736a2a990322a46aac0e95826c5b",
+            "name": "Bit Digital xStock",
+            "symbol": "BTBTx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BTBTx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
             "chainId": 56,
+            "address": "0x22e1991e5f82736a2a990322a46aac0e95826c5b",
+            "name": "Bit Digital xStock",
+            "symbol": "BTBTx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BTBTx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 196,
             "address": "0x22e1991e5f82736a2a990322a46aac0e95826c5b",
             "name": "Bit Digital xStock",
             "symbol": "BTBTx",
@@ -2688,17 +2864,6 @@
             ]
         },
         {
-            "chainId": 57073,
-            "address": "0x22e1991e5f82736a2a990322a46aac0e95826c5b",
-            "name": "Bit Digital xStock",
-            "symbol": "BTBTx",
-            "decimals": 18,
-            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/BTBTx.png",
-            "tags": [
-                "xStocks"
-            ]
-        },
-        {
             "chainId": 42161,
             "address": "0xf6a873bae4ba1b304e45df52a4b7d176e1c6a8c4",
             "name": "Micron Technology xStock",
@@ -2848,6 +3013,83 @@
             "symbol": "RBLXx",
             "decimals": 18,
             "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/RBLXx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 42161,
+            "address": "0xc0b417e7f83db438631eb5e096684dd742e5294f",
+            "name": "ASML xStock",
+            "symbol": "ASMLx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ASMLx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 56,
+            "address": "0xc0b417e7f83db438631eb5e096684dd742e5294f",
+            "name": "ASML xStock",
+            "symbol": "ASMLx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ASMLx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 1,
+            "address": "0xc0b417e7f83db438631eb5e096684dd742e5294f",
+            "name": "ASML xStock",
+            "symbol": "ASMLx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ASMLx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 999,
+            "address": "0xc0b417e7f83db438631eb5e096684dd742e5294f",
+            "name": "ASML xStock",
+            "symbol": "ASMLx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ASMLx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 57073,
+            "address": "0xc0b417e7f83db438631eb5e096684dd742e5294f",
+            "name": "ASML xStock",
+            "symbol": "ASMLx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ASMLx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 5000,
+            "address": "0xc0b417e7f83db438631eb5e096684dd742e5294f",
+            "name": "ASML xStock",
+            "symbol": "ASMLx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ASMLx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 196,
+            "address": "0xc0b417e7f83db438631eb5e096684dd742e5294f",
+            "name": "ASML xStock",
+            "symbol": "ASMLx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/ASMLx.png",
             "tags": [
                 "xStocks"
             ]

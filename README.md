@@ -8,25 +8,25 @@ Token list for xStocks tokenized assets, following the [Uniswap Token Lists](htt
 
 | Network | Tokens |
 |---------|--------|
-| Ethereum | 131 |
-| XLayer | 131 |
-| BinanceSmartChain | 103 |
-| Ink | 102 |
-| Mantle | 95 |
-| HyperEVM | 88 |
-| Arbitrum | 87 |
+| Ethereum | 134 |
+| XLayer | 134 |
+| BinanceSmartChain | 106 |
+| Ink | 105 |
+| Mantle | 99 |
+| HyperEVM | 91 |
+| Arbitrum | 90 |
 | Optimism | 3 |
 |---------|--------|
-| **Total** | **740** |
+| **Total** | **762** |
 
 ### Network Coverage Gaps
 
-Unique symbols: 132
+Unique symbols: 135
 
-- **Optimism** missing 129: MDLNx, ENHAx, EWYx, DAXx, SATAx, SOXXx, EWUx, EWGx, EWQx, BITXx, VOOx, NLRx, GDXx, FEZx, JAAAx, JPSTx, FLQMx, FSMLx, FLBLx, IQMx, YLDEx, FAAAx, SOXLx, VIDAx, RCATx, ONDSx, IRENx, HIMSx, NETx, LNGx, MOOx, XOPx, VGKx, ITAx, VUGx, SMHx, URAx, XLEx, VCXx, SNDKx, CEGx, SMCIx, DELLx, USARx, UUUUx, PPLTx, PALLx, COPXx, BTGOx, SLVx, STRKx, STRCx, VTx, IEMGx, IJRx, IWMx, TMUSx, BTBTx, MUx, RBLXx, AMDx, TSMx, WENx, PYPLx, SBETx, UBERx, ADBEx, RIOTx, MARAx, GLXYx, BMNRx, MSTRx, TBLLx, CRCLx, TQQQx, GLDx, VTIx, QQQx, SPYx, COINx, GMEx, GSx, CRWDx, HOODx, MRVLx, APPx, PLTRx, INTCx, PMx, HONx, CMCSAx, IBMx, DHRx, MCDx, NFLXx, ABTx, BACx, TMOx, AZNx, CRMx, LINx, ORCLx, NVOx, CSCOx, WMTx, KOx, PEPx, ABBVx, MRKx, PFEx, CVXx, HDx, PGx, MAx, LLYx, Vx, JPMx, JNJx, XOMx, UNHx, BRK.Bx, TSLAx, AVGOx, GOOGLx, METAx, AMZNx, MSFTx, NVDAx, AAPLx
+- **Optimism** missing 132: BSPx, BOTx, MDLNx, ENHAx, EWYx, DAXx, SATAx, SOXXx, EWUx, EWGx, EWQx, BITXx, VOOx, NLRx, GDXx, FEZx, JAAAx, JPSTx, FLQMx, FSMLx, FLBLx, IQMx, YLDEx, FAAAx, SOXLx, VIDAx, RCATx, ONDSx, IRENx, HIMSx, NETx, LNGx, MOOx, XOPx, VGKx, ITAx, VUGx, SMHx, URAx, XLEx, VCXx, SNDKx, CEGx, SMCIx, DELLx, USARx, UUUUx, PPLTx, PALLx, COPXx, BTGOx, SLVx, STRKx, STRCx, VTx, IEMGx, IJRx, IWMx, TMUSx, BTBTx, MUx, RBLXx, ASMLx, AMDx, TSMx, WENx, PYPLx, SBETx, UBERx, ADBEx, RIOTx, MARAx, GLXYx, BMNRx, MSTRx, TBLLx, CRCLx, TQQQx, GLDx, VTIx, QQQx, SPYx, COINx, GMEx, GSx, CRWDx, HOODx, MRVLx, APPx, PLTRx, INTCx, PMx, HONx, CMCSAx, IBMx, DHRx, MCDx, NFLXx, ABTx, BACx, TMOx, AZNx, CRMx, LINx, ORCLx, NVOx, CSCOx, WMTx, KOx, PEPx, ABBVx, MRKx, PFEx, CVXx, HDx, PGx, MAx, LLYx, Vx, JPMx, JNJx, XOMx, UNHx, BRK.Bx, TSLAx, AVGOx, GOOGLx, METAx, AMZNx, MSFTx, NVDAx, AAPLx
 - **Arbitrum** missing 45: ENHAx, EWYx, DAXx, SATAx, SOXXx, EWUx, EWGx, EWQx, BITXx, VOOx, NLRx, GDXx, FEZx, JAAAx, JPSTx, FLQMx, USPXx, FSMLx, FLBLx, IQMx, YLDEx, FAAAx, SOXLx, VIDAx, RCATx, ONDSx, IRENx, HIMSx, NETx, LNGx, MOOx, XOPx, VGKx, ITAx, VUGx, SMHx, URAx, XLEx, VCXx, SNDKx, CEGx, SMCIx, DELLx, USARx, UUUUx
 - **HyperEVM** missing 44: ENHAx, EWYx, DAXx, SATAx, SOXXx, EWUx, EWGx, EWQx, BITXx, VOOx, NLRx, GDXx, FEZx, JAAAx, JPSTx, FLQMx, FSMLx, FLBLx, IQMx, YLDEx, FAAAx, SOXLx, VIDAx, RCATx, ONDSx, IRENx, HIMSx, NETx, LNGx, MOOx, XOPx, VGKx, ITAx, VUGx, SMHx, URAx, XLEx, VCXx, SNDKx, CEGx, SMCIx, DELLx, USARx, UUUUx
-- **Mantle** missing 37: BSPx, ENHAx, EWYx, DAXx, SATAx, SOXXx, EWUx, EWGx, EWQx, BITXx, VOOx, NLRx, GDXx, FEZx, JAAAx, JPSTx, FLQMx, FSMLx, FLBLx, IQMx, YLDEx, FAAAx, SOXLx, VIDAx, RCATx, ONDSx, IRENx, HIMSx, NETx, LNGx, ITAx, PPLTx, PALLx, COPXx, BTGOx, SLVx, NFLXx
+- **Mantle** missing 36: ENHAx, EWYx, DAXx, SATAx, SOXXx, EWUx, EWGx, EWQx, BITXx, VOOx, NLRx, GDXx, FEZx, JAAAx, JPSTx, FLQMx, FSMLx, FLBLx, IQMx, YLDEx, FAAAx, SOXLx, VIDAx, RCATx, ONDSx, IRENx, HIMSx, NETx, LNGx, ITAx, PPLTx, PALLx, COPXx, BTGOx, SLVx, NFLXx
 - **Ink** missing 30: ENHAx, EWYx, DAXx, SATAx, SOXXx, EWUx, EWGx, EWQx, BITXx, VOOx, NLRx, GDXx, FEZx, JAAAx, JPSTx, FLQMx, FSMLx, FLBLx, IQMx, YLDEx, FAAAx, SOXLx, VIDAx, RCATx, ONDSx, IRENx, HIMSx, NETx, LNGx, SLVx
 - **BinanceSmartChain** missing 29: ENHAx, EWYx, DAXx, SATAx, SOXXx, EWUx, EWGx, EWQx, BITXx, VOOx, NLRx, GDXx, FEZx, JAAAx, JPSTx, FLQMx, FSMLx, FLBLx, IQMx, YLDEx, FAAAx, SOXLx, VIDAx, RCATx, ONDSx, IRENx, HIMSx, NETx, LNGx
 - **Ethereum** missing 1: MDLNx
