@@ -2,6 +2,18 @@
 
 All notable changes to the xStocks Token List.
 
+## [5.1.0] - 2026-07-08
+
+### Added
+- SKHYx:Ethereum
+- SKHYx:Arbitrum
+- SKHYx:BinanceSmartChain
+- SKHYx:Ink
+- SKHYx:HyperEVM
+- SKHYx:Mantle
+- SKHYx:Optimism
+- SKHYx:XLayer
+
 ## [5.0.0] - 2026-07-08
 
 ### Added

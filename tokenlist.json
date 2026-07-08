@@ -1,9 +1,9 @@
 {
     "name": "xStocks Token List",
-    "timestamp": "2026-07-08T18:23:51.228Z",
+    "timestamp": "2026-07-08T18:35:47.418Z",
     "version": {
         "major": 5,
-        "minor": 0,
+        "minor": 1,
         "patch": 0
     },
     "logoURI": "https://xstocks.fi/apple-touch-icon.png",
@@ -14,6 +14,94 @@
         }
     },
     "tokens": [
+        {
+            "chainId": 1,
+            "address": "0x58100046a4afcd4ee4fadbd4244f3f895a341c56",
+            "name": "SK hynix xStock",
+            "symbol": "SKHYx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SKHYx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 42161,
+            "address": "0x58100046a4afcd4ee4fadbd4244f3f895a341c56",
+            "name": "SK hynix xStock",
+            "symbol": "SKHYx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SKHYx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 56,
+            "address": "0x58100046a4afcd4ee4fadbd4244f3f895a341c56",
+            "name": "SK hynix xStock",
+            "symbol": "SKHYx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SKHYx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 57073,
+            "address": "0x58100046a4afcd4ee4fadbd4244f3f895a341c56",
+            "name": "SK hynix xStock",
+            "symbol": "SKHYx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SKHYx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 999,
+            "address": "0x58100046a4afcd4ee4fadbd4244f3f895a341c56",
+            "name": "SK hynix xStock",
+            "symbol": "SKHYx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SKHYx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 5000,
+            "address": "0x58100046a4afcd4ee4fadbd4244f3f895a341c56",
+            "name": "SK hynix xStock",
+            "symbol": "SKHYx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SKHYx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 10,
+            "address": "0x58100046a4afcd4ee4fadbd4244f3f895a341c56",
+            "name": "SK hynix xStock",
+            "symbol": "SKHYx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SKHYx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 196,
+            "address": "0x58100046a4afcd4ee4fadbd4244f3f895a341c56",
+            "name": "SK hynix xStock",
+            "symbol": "SKHYx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/SKHYx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
         {
             "chainId": 5000,
             "address": "0x7796f4e23a62ef3653829c21032a9e24beaf4cf5",
