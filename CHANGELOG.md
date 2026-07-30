@@ -2,6 +2,16 @@
 
 All notable changes to the xStocks Token List.
 
+## [5.3.0] - 2026-07-26
+
+### Added
+- JMKEx:BinanceSmartChain
+- JMKEx:Optimism
+- JMKEx:Mantle
+- JMKEx:XLayer
+- JMKEx:Ink
+- JMKEx:Ethereum
+
 ## [5.2.0] - 2026-07-26
 
 ### Added

@@ -1,9 +1,9 @@
 {
     "name": "xStocks Token List",
-    "timestamp": "2026-07-26T15:11:16.324Z",
+    "timestamp": "2026-07-26T15:16:28.353Z",
     "version": {
         "major": 5,
-        "minor": 2,
+        "minor": 3,
         "patch": 0
     },
     "logoURI": "https://xstocks.fi/apple-touch-icon.png",
@@ -14,6 +14,72 @@
         }
     },
     "tokens": [
+        {
+            "chainId": 56,
+            "address": "0x97fcf4dd5275ab0de96420cbe36e4c947d5d8edf",
+            "name": "Jersey Mike's Subs xStock",
+            "symbol": "JMKEx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/JMKEx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 10,
+            "address": "0x97fcf4dd5275ab0de96420cbe36e4c947d5d8edf",
+            "name": "Jersey Mike's Subs xStock",
+            "symbol": "JMKEx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/JMKEx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 5000,
+            "address": "0x97fcf4dd5275ab0de96420cbe36e4c947d5d8edf",
+            "name": "Jersey Mike's Subs xStock",
+            "symbol": "JMKEx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/JMKEx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 196,
+            "address": "0x97fcf4dd5275ab0de96420cbe36e4c947d5d8edf",
+            "name": "Jersey Mike's Subs xStock",
+            "symbol": "JMKEx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/JMKEx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 57073,
+            "address": "0x97fcf4dd5275ab0de96420cbe36e4c947d5d8edf",
+            "name": "Jersey Mike's Subs xStock",
+            "symbol": "JMKEx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/JMKEx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
+        {
+            "chainId": 1,
+            "address": "0x97fcf4dd5275ab0de96420cbe36e4c947d5d8edf",
+            "name": "Jersey Mike's Subs xStock",
+            "symbol": "JMKEx",
+            "decimals": 18,
+            "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/JMKEx.png",
+            "tags": [
+                "xStocks"
+            ]
+        },
         {
             "chainId": 42161,
             "address": "0x58100046a4afcd4ee4fadbd4244f3f895a341c56",
