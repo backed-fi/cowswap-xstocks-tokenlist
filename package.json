@@ -13,6 +13,7 @@
   "dependencies": {
     "@uniswap/token-lists": "^1.0.0-beta.35",
     "ajv": "^8.18.0",
-    "ajv-formats": "^3.0.1"
+    "ajv-formats": "^3.0.1",
+    "dotenv": "^18.0.4"
   }
 }

@@ -27,83 +27,41 @@ async function fetchAllAssets() {
   return allAssets;
 }
 
-function transformAssetsToTokens(assets) {
-  // SHEIN xStock (ISIN CH1588660667) is deployed but still Private, so the API
-  // does not return it yet. Seeded here so the list is ready to merge the moment
-  // the IPO goes live; delete this block once the API serves SHEINx, otherwise
-  // these entries will be duplicated.
-  // Solana (Xs8w8HvDjT1DxYeHzhSkRT8wYUahJB9kRC7Fuiic2Hf) is omitted: not in CHAIN_IDS.
-  const tokens = [
-    {
-      chainId: CHAIN_IDS.Ethereum,
-      address: '0x4d0ba049c430a7a80a61e7ebdf50b6daac6c3bd6',
-      name: 'SHEIN xStock',
-      symbol: 'SHEINx',
-      decimals: XSTOCKS_DECIMALS,
-      logoURI: 'https://xstocks-metadata.backed.fi/logos/tokens/SHEINx.png',
-      tags: ['xStocks']
-    },
-    {
-      chainId: CHAIN_IDS.BinanceSmartChain,
-      address: '0x4d0ba049c430a7a80a61e7ebdf50b6daac6c3bd6',
-      name: 'SHEIN xStock',
-      symbol: 'SHEINx',
-      decimals: XSTOCKS_DECIMALS,
-      logoURI: 'https://xstocks-metadata.backed.fi/logos/tokens/SHEINx.png',
-      tags: ['xStocks']
-    },
-    {
-      chainId: CHAIN_IDS.Optimism,
-      address: '0x4d0ba049c430a7a80a61e7ebdf50b6daac6c3bd6',
-      name: 'SHEIN xStock',
-      symbol: 'SHEINx',
-      decimals: XSTOCKS_DECIMALS,
-      logoURI: 'https://xstocks-metadata.backed.fi/logos/tokens/SHEINx.png',
-      tags: ['xStocks']
-    },
-    {
-      chainId: CHAIN_IDS.Mantle,
-      address: '0x4d0ba049c430a7a80a61e7ebdf50b6daac6c3bd6',
-      name: 'SHEIN xStock',
-      symbol: 'SHEINx',
-      decimals: XSTOCKS_DECIMALS,
-      logoURI: 'https://xstocks-metadata.backed.fi/logos/tokens/SHEINx.png',
-      tags: ['xStocks']
-    },
-    {
-      chainId: CHAIN_IDS.HyperEVM,
-      address: '0x4d0ba049c430a7a80a61e7ebdf50b6daac6c3bd6',
-      name: 'SHEIN xStock',
-      symbol: 'SHEINx',
-      decimals: XSTOCKS_DECIMALS,
-      logoURI: 'https://xstocks-metadata.backed.fi/logos/tokens/SHEINx.png',
-      tags: ['xStocks']
-    },
-    {
-      chainId: CHAIN_IDS.Ink,
-      address: '0x4d0ba049c430a7a80a61e7ebdf50b6daac6c3bd6',
-      name: 'SHEIN xStock',
-      symbol: 'SHEINx',
-      decimals: XSTOCKS_DECIMALS,
-      logoURI: 'https://xstocks-metadata.backed.fi/logos/tokens/SHEINx.png',
-      tags: ['xStocks']
-    },
-    {
-      chainId: CHAIN_IDS.XLayer,
-      address: '0x4d0ba049c430a7a80a61e7ebdf50b6daac6c3bd6',
-      name: 'SHEIN xStock',
-      symbol: 'SHEINx',
-      decimals: XSTOCKS_DECIMALS,
-      logoURI: 'https://xstocks-metadata.backed.fi/logos/tokens/SHEINx.png',
-      tags: ['xStocks']
+// Local, gitignored file of Private (pre-IPO) assets the public API does not
+// return yet, keyed by symbol. See preseed.example.json for the format.
+const PRESEED_PATH = path.join(__dirname, 'preseed.json');
+
+/**
+ * Look up assets by ticker in preseed.json (same shape as the public API's
+ * assets: name, symbol, deployments[])
+ */
+function loadPreseededAssets(tickers) {
+  if (!fs.existsSync(PRESEED_PATH)) {
+    throw new Error('preseed.json not found - create it from preseed.example.json before passing tickers');
+  }
+  const preseed = JSON.parse(fs.readFileSync(PRESEED_PATH, 'utf8'));
+  return tickers.map(ticker => {
+    if (!Object.hasOwn(preseed, ticker)) {
+      throw new Error(`${ticker} not found in preseed.json - add it (see preseed.example.json)`);
     }
-  ];
+    return preseed[ticker];
+  });
+}
+
+function transformAssetsToTokens(assets) {
+  const tokens = [];
+  // Dedupe on chainId + address so a preseeded asset is not duplicated once
+  // the public API also returns it (first occurrence wins)
+  const seen = new Set();
 
   for (const asset of assets) {
     for (const deployment of asset.deployments) {
       if (!deployment.supportsAtomicSwaps) continue;
       const chainId = CHAIN_IDS[deployment.network];
       if (chainId === undefined) continue;
+      const key = `${chainId}-${deployment.address.toLowerCase()}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
 
       tokens.push({
         chainId,
@@ -120,6 +78,63 @@ function transformAssetsToTokens(assets) {
   return tokens;
 }
 
+// The Uniswap token-lists schema caps a list at 10,000 tokens. CowSwap is
+// deciding how to handle the cap; until then, new entries beyond it are deferred.
+const MAX_TOKENS = 10000;
+
+/**
+ * Keep the list within MAX_TOKENS. Entries already in the list and the
+ * keepSymbols (preseeded tickers) always stay; new entries are added a whole
+ * symbol at a time, oldest asset first (the API returns newest first), until
+ * the cap is reached.
+ */
+function capTokens(tokens, existingTokens, keepSymbols) {
+  if (tokens.length <= MAX_TOKENS) return { tokens, deferred: [] };
+
+  const key = t => `${t.chainId}-${t.address.toLowerCase()}`;
+  const existing = new Set(existingTokens.map(key));
+  const isKept = t => existing.has(key(t)) || keepSymbols.includes(t.symbol);
+  let budget = MAX_TOKENS - tokens.filter(isKept).length;
+
+  const newBySymbol = new Map();
+  for (const token of tokens) {
+    if (isKept(token)) continue;
+    newBySymbol.set(token.symbol, [...(newBySymbol.get(token.symbol) || []), token]);
+  }
+
+  const included = new Set();
+  for (const [symbol, entries] of [...newBySymbol].reverse()) {
+    if (entries.length > budget) break;
+    budget -= entries.length;
+    included.add(symbol);
+  }
+
+  const isIncluded = t => isKept(t) || included.has(t.symbol);
+  return {
+    tokens: tokens.filter(isIncluded),
+    deferred: tokens.filter(t => !isIncluded(t))
+  };
+}
+
+// The Uniswap token-lists schema caps names at 60 characters
+const MAX_NAME_LENGTH = 60;
+
+/**
+ * Shorten names over MAX_NAME_LENGTH: drop the " xStock" suffix, then cut back
+ * to the last whole word if it is still too long
+ */
+function shortenName(name) {
+  if (name.length <= MAX_NAME_LENGTH) return name;
+  const base = name.replace(/ xStock$/, '');
+  if (base.length <= MAX_NAME_LENGTH) return base;
+  // Look one character past the limit so a word ending exactly at it is kept
+  const cut = base.slice(0, MAX_NAME_LENGTH + 1);
+  const lastSpace = cut.lastIndexOf(' ');
+  return (lastSpace > 0 ? cut.slice(0, lastSpace) : cut.slice(0, MAX_NAME_LENGTH)).trim();
+}
+
+const LOGO_CHECK_CONCURRENCY = 20;
+
 async function checkLogoURIs(tokens) {
   const uniqueLogos = new Map();
   for (const token of tokens) {
@@ -130,24 +145,33 @@ async function checkLogoURIs(tokens) {
 
   console.log(`\nChecking ${uniqueLogos.size} logo URIs...`);
 
-  const results = await Promise.all(
-    [...uniqueLogos.entries()].map(async ([symbol, url]) => {
-      try {
-        const response = await fetch(url, { method: 'HEAD' });
-        return { symbol, url, ok: response.ok, status: response.status };
-      } catch (err) {
-        return { symbol, url, ok: false, status: 'network error' };
-      }
-    })
-  );
+  const checkLogo = async ([symbol, url], retries = 1) => {
+    try {
+      const response = await fetch(url, { method: 'HEAD' });
+      return { symbol, url, ok: response.ok, status: response.status };
+    } catch (err) {
+      if (retries > 0) return checkLogo([symbol, url], retries - 1);
+      return { symbol, url, ok: false, status: 'network error' };
+    }
+  };
+
+  // Check a limited number at a time: firing ~1,400 requests at once makes the
+  // logo host drop connections, which showed up as false "network error"s
+  const queue = [...uniqueLogos.entries()];
+  const results = [];
+  await Promise.all(Array.from({ length: LOGO_CHECK_CONCURRENCY }, async () => {
+    while (queue.length > 0) {
+      results.push(await checkLogo(queue.shift()));
+    }
+  }));
 
   const broken = results.filter(r => !r.ok).sort((a, b) => a.symbol.localeCompare(b.symbol));
 
   if (broken.length === 0) {
     console.log('All logo URIs are valid.');
   } else {
-    console.log(`\n=== Broken Logo URIs (${broken.length}) ===`);
-    broken.forEach(b => console.log(`  ${b.symbol} (HTTP ${b.status}): ${b.url}`));
+    const symbols = broken.map(b => `${b.symbol} (${b.status})`).join(', ');
+    console.log(`Broken logo URIs (${broken.length}, full URLs in README.md): ${symbols}`);
   }
 
   return broken;
@@ -161,7 +185,7 @@ const SCHEMA_PATH = path.join(__dirname, 'node_modules/@uniswap/token-lists/src/
  */
 function isValidTokenList(tokenList) {
   const schema = JSON.parse(fs.readFileSync(SCHEMA_PATH, 'utf8'));
-  const ajv = new Ajv({ allErrors: true, verbose: true });
+  const ajv = new Ajv({ allErrors: true });
   addFormats(ajv);
   const validate = ajv.compile(schema);
   const valid = validate(tokenList);
@@ -186,7 +210,8 @@ const CHAIN_IDS = {
   Polygon: 137,
   Ethereum: 1,
   XLayer: 196,
-  Optimism: 10
+  Optimism: 10,
+  Monad: 143
 };
 
 // Reverse lookup: chainId -> network name
@@ -415,16 +440,13 @@ function updateReadme(tokens, brokenLogos = []) {
     console.log('Token Statistics section not found in README.md, skipping update');
   }
 
-  // Log coverage gaps to console
+  // Log coverage gap counts to console (README.md has the full symbol lists)
   if (Object.keys(missingByNetwork).length > 0) {
-    console.log('\n=== Network Coverage Gaps ===');
-    console.log(`Unique symbols: ${totalSymbols}`);
-    const sortedNetworks = Object.entries(missingByNetwork)
-      .sort((a, b) => b[1].length - a[1].length);
-    for (const [network, missing] of sortedNetworks) {
-      const symbols = missing.map(m => m.symbol).join(', ');
-      console.log(`${network} missing ${missing.length}: ${symbols}`);
-    }
+    const gaps = Object.entries(missingByNetwork)
+      .sort((a, b) => b[1].length - a[1].length)
+      .map(([network, missing]) => `${network} ${missing.length}`)
+      .join(', ');
+    console.log(`\nNetwork coverage gaps (of ${totalSymbols} symbols, full lists in README.md): ${gaps}`);
   }
 }
 
@@ -482,6 +504,63 @@ function appendChangelog(version, summary, timestamp) {
 }
 
 /**
+ * Summarize "SYMBOL:Network" entries (or modified records) by symbol for the
+ * console, e.g. "ANTx (7), KSTRx (7: name)". CHANGELOG.md has the full detail.
+ */
+function summarizeBySymbol(entries) {
+  const bySymbol = new Map();
+  for (const entry of entries) {
+    const [symbol] = (entry.token || entry).split(':');
+    const group = bySymbol.get(symbol) || { count: 0, fields: new Set() };
+    group.count++;
+    Object.keys(entry.changes || {}).forEach(field => group.fields.add(field));
+    bySymbol.set(symbol, group);
+  }
+  return [...bySymbol]
+    .map(([symbol, { count, fields }]) => `${symbol} (${count}${fields.size ? `: ${[...fields].join(', ')}` : ''})`)
+    .join(', ');
+}
+
+const MAX_SYMBOLS_PER_ERROR = 25;
+
+/**
+ * Group schema errors by field and message, listing each offending symbol once
+ * with its chain count, instead of one error per token entry
+ */
+function formatValidationErrors(errors, tokenlist) {
+  const groups = new Map();
+  for (const error of errors) {
+    const value = error.instancePath.split('/').slice(1).reduce((obj, key) => obj?.[key], tokenlist);
+    const [, index, field] = error.instancePath.match(/^\/tokens\/(\d+)\/?(.*)$/) || [];
+    const token = index === undefined ? null : tokenlist.tokens[index];
+    const where = token ? field || 'token' : error.instancePath || '/';
+    const size = !token && Array.isArray(value) ? ` (has ${value.length})` : '';
+    const key = `${where}: ${error.message}${size}`;
+
+    const group = groups.get(key) || { count: 0, bySymbol: new Map() };
+    group.count++;
+    groups.set(key, group);
+    if (!token) continue;
+    const entry = group.bySymbol.get(token.symbol) || { chains: 0, value };
+    entry.chains++;
+    group.bySymbol.set(token.symbol, entry);
+  }
+
+  const lines = [`Validation failed with ${errors.length} error(s):`];
+  for (const [key, { count, bySymbol }] of groups) {
+    lines.push(`  ${key} - ${count} error(s)`);
+    for (const [symbol, { chains, value }] of [...bySymbol].slice(0, MAX_SYMBOLS_PER_ERROR)) {
+      const shown = typeof value === 'string' ? `: "${value}" (${value.length} chars)` : '';
+      lines.push(`    ${symbol} on ${chains} chain(s)${shown}`);
+    }
+    if (bySymbol.size > MAX_SYMBOLS_PER_ERROR) {
+      lines.push(`    ...and ${bySymbol.size - MAX_SYMBOLS_PER_ERROR} more symbol(s)`);
+    }
+  }
+  return lines.join('\n');
+}
+
+/**
  * Update token list with new tokens
  * @param {Array} newTokens - Array of token objects with at minimum: chainId, address, name, symbol, decimals
  *                            logoURI and tags will be auto-generated if not provided
@@ -495,7 +574,7 @@ async function updateTokenList(newTokens) {
   const processedTokens = newTokens.map(token => ({
     chainId: token.chainId,
     address: token.address,
-    name: token.name,
+    name: shortenName(token.name),
     symbol: token.symbol,
     decimals: token.decimals,
     logoURI: `https://xstocks-metadata.backed.fi/logos/tokens/${token.symbol}.png`,
@@ -503,56 +582,36 @@ async function updateTokenList(newTokens) {
   }));
 
   // Calculate version bump and get summary
-  const { newVersion, summary } = calculateVersionBump(oldTokens, processedTokens, tokenlist.version);
+  const oldVersion = tokenlist.version;
+  const { newVersion, summary } = calculateVersionBump(oldTokens, processedTokens, oldVersion);
 
   // Update tokenlist
   tokenlist.tokens = processedTokens;
   tokenlist.version = newVersion;
   tokenlist.timestamp = new Date().toISOString();
 
+  // Log summary (by symbol; per-network detail goes to CHANGELOG.md) before
+  // validating, so it is shown even when validation fails
+  const versionStr = v => `${v.major}.${v.minor}.${v.patch}`;
+
+  console.log('=== Update Summary ===');
+  console.log(`Version:  ${versionStr(oldVersion)} → ${versionStr(newVersion)} (${summary.versionBumpReason})`);
+  console.log(`Tokens:   ${oldTokens.length} → ${processedTokens.length}`);
+  console.log('');
+  console.log(`Added:    ${summary.added}${summary.added ? `  ${summarizeBySymbol(summary.addedTokens)}` : ''}`);
+  console.log(`Removed:  ${summary.removed}${summary.removed ? `  ${summarizeBySymbol(summary.removedTokens)}` : ''}`);
+  console.log(`Modified: ${summary.modified}${summary.modified ? `  ${summarizeBySymbol(summary.modifiedTokens)}` : ''}`);
+
   // Validate using Uniswap token-lists schema
   const validationErrors = isValidTokenList(tokenlist);
 
   if (validationErrors !== true) {
-    console.error('Validation failed:');
-    console.error(JSON.stringify(validationErrors, null, 2));
+    console.error(`\n${formatValidationErrors(validationErrors, tokenlist)}`);
+    console.error('\nNothing was written.');
     process.exit(1);
   }
 
-  console.log('Validation passed!\n');
-
-  // Log summary
-  const newVersionStr = `${newVersion.major}.${newVersion.minor}.${newVersion.patch}`;
-
-  console.log('=== Update Summary ===');
-  console.log(`Version: ${newVersionStr}`);
-  console.log(`Total tokens: ${processedTokens.length}`);
-  console.log('');
-  console.log(`Added:    ${summary.added}`);
-  console.log(`Removed:  ${summary.removed}`);
-  console.log(`Modified: ${summary.modified}`);
-  console.log('');
-  console.log(`Version bump: ${summary.versionBumpReason}`);
-
-  if (summary.added > 0) {
-    console.log('\nAdded tokens:');
-    summary.addedTokens.forEach(t => console.log(`  + ${t}`));
-  }
-
-  if (summary.removed > 0) {
-    console.log('\nRemoved tokens:');
-    summary.removedTokens.forEach(t => console.log(`  - ${t}`));
-  }
-
-  if (summary.modified > 0) {
-    console.log('\nModified tokens:');
-    summary.modifiedTokens.forEach(m => {
-      const changeDetails = Object.entries(m.changes)
-        .map(([field, { before, after }]) => `${field}: "${before}" → "${after}"`)
-        .join(', ');
-      console.log(`  ~ ${m.token}: ${changeDetails}`);
-    });
-  }
+  console.log('\nValidation passed!');
 
   // Write updated tokenlist
   fs.writeFileSync(TOKENLIST_PATH, JSON.stringify(tokenlist, null, 4) + '\n');
@@ -584,13 +643,28 @@ if (require.main === module) {
   (async () => {
     try {
       const args = process.argv.slice(2);
+      const isFileArg = args.length === 1 && args[0].endsWith('.json');
 
-      if (args.length === 0) {
-        // Default: fetch live from the xStocks API
+      if (!isFileArg) {
+        // Default: fetch live from the xStocks API, plus any tickers passed as
+        // args, read from preseed.json (Private pre-IPO assets).
+        // Preseed is loaded first so a missing ticker fails fast, but appended
+        // last so public API data wins the dedupe.
+        const preseeded = args.length > 0 ? loadPreseededAssets(args) : [];
         const assets = await fetchAllAssets();
         console.log(`Fetched ${assets.length} assets from API`);
-        const tokens = transformAssetsToTokens(assets);
-        console.log(`Transformed to ${tokens.length} token entries\n`);
+        if (preseeded.length > 0) {
+          console.log(`Loaded ${args.join(', ')} from preseed.json`);
+        }
+        assets.push(...preseeded);
+        const allTokens = transformAssetsToTokens(assets);
+        console.log(`Transformed to ${allTokens.length} token entries`);
+        const existingTokens = JSON.parse(fs.readFileSync(TOKENLIST_PATH, 'utf8')).tokens;
+        const { tokens, deferred } = capTokens(allTokens, existingTokens, args);
+        if (deferred.length > 0) {
+          console.log(`Deferred ${deferred.length} new entries to stay within the ${MAX_TOKENS} token cap: ${summarizeBySymbol(deferred.map(formatTokenShort))}`);
+        }
+        console.log('');
         await replaceTokens(tokens);
       } else {
         // Accept a local JSON file as an override (API-format or flat token list)
@@ -608,4 +682,4 @@ if (require.main === module) {
   })();
 }
 
-module.exports = { updateTokenList, replaceTokens, calculateVersionBump, fetchAllAssets, transformAssetsToTokens, CHAIN_IDS };
+module.exports = { updateTokenList, replaceTokens, calculateVersionBump, fetchAllAssets, loadPreseededAssets, transformAssetsToTokens, CHAIN_IDS };

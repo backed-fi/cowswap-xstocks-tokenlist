@@ -2,7 +2,7 @@
 
 Token list for xStocks tokenized assets, following the [Uniswap Token Lists](https://github.com/Uniswap/token-lists) specification.
 
-> **Note:** To update the token list, run `npm run update`. This fetches live data from the xStocks API v2 `/assets` endpoint (`https://api.xstocks.fi/api/v2/public/assets`). A local file path can also be passed as an argument for offline overrides.
+> **Note:** To update the token list, run `npm run update`. This fetches live data from the xStocks API v2 `/assets` endpoint (`https://api.xstocks.fi/api/v2/public/assets`). Pass tickers (e.g. `npm run update -- EXAMPLEx`) to include Private pre-IPO assets from a local `preseed.json`, or a local file path for offline overrides. See [Updating the Token List](#updating-the-token-list).
 
 ## Token Statistics
 
@@ -107,12 +107,28 @@ Add the token list URL to your DEX or wallet that supports Uniswap Token Lists.
 Use the `update-tokenlist.js` script to update tokens:
 
 ```bash
-# Using npm script (reads from public_atomic_tokenlist.json)
+# Fetch all public assets from the xStocks API
 npm run update
 
-# Or explicitly with node
+# Also include Private (pre-IPO) assets by ticker, read from preseed.json
+npm run update -- EXAMPLEx
+npm run update -- EXAMPLEx OTHERx
+
+# Offline override from a local JSON file (API-format assets or a flat token list)
 node update-tokenlist.js <path-to-new-tokens.json>
 ```
+
+The `--` passes the tickers through npm to the script.
+
+### Including Private (pre-IPO) tokens
+
+The public xStocks API only returns public assets. To list a token before its IPO goes live, add its details to your own `preseed.json` and pass its ticker:
+
+1. Copy `preseed.example.json` to `preseed.json` in the repo root. `preseed.json` is gitignored, so it stays local.
+2. Add an entry for each token, keyed by its symbol. Each entry has the token's `name`, `symbol` and `deployments`. Each deployment has a `network`, an `address` and `supportsAtomicSwaps`. Network names must match the [Supported Networks](#supported-networks) table, e.g. `Ethereum` or `BinanceSmartChain`.
+3. Run `npm run update -- <TICKER>`.
+
+As with public assets, only deployments with `supportsAtomicSwaps: true` on a supported network are included. Tokens are deduplicated on chain ID plus address, so a preseeded token that the public API also returns is not listed twice. A run without the ticker does not include the token, and if it was already listed, it is removed.
 
 The script will:
 
@@ -149,4 +165,7 @@ Following the [Token Lists specification](https://github.com/Uniswap/token-lists
 | Etherlink | 42793 |
 | HyperEVM | 999 |
 | Tron | 728126428 |
+| XLayer | 196 |
+| Optimism | 10 |
+| Monad | 143 |
 
