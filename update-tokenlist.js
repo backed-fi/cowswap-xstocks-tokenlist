@@ -1,3 +1,4 @@
+require('dotenv').config({ quiet: true });
 const fs = require('fs');
 const path = require('path');
 const Ajv = require('ajv');
@@ -27,83 +28,70 @@ async function fetchAllAssets() {
   return allAssets;
 }
 
+// Tickers are interpolated into the API path, so restrict them to plain symbols
+const TICKER_PATTERN = /^[A-Za-z0-9]{1,20}$/;
+
+/**
+ * Fetch a single asset by ticker, authenticated so Private (pre-IPO) assets
+ * are returned. Requires BACKED_API_KEY in the environment.
+ */
+async function fetchAsset(ticker) {
+  if (!TICKER_PATTERN.test(ticker)) {
+    throw new Error(`Invalid ticker: ${JSON.stringify(ticker)}`);
+  }
+  const apiKey = process.env.BACKED_API_KEY;
+  if (!apiKey) {
+    throw new Error('BACKED_API_KEY is not set (add it to .env) - required to fetch assets by ticker');
+  }
+  const response = await fetch(`${API_URL}/${encodeURIComponent(ticker)}`, {
+    headers: { 'X-API-KEY': apiKey }
+  });
+  if (!response.ok) {
+    throw new Error(`API request for ${ticker} failed: ${response.status} ${response.statusText}`);
+  }
+  return response.json();
+}
+
+// Oura xStock (ISIN CH1588665880) is deployed but still Private, so the public
+// API does not return it yet. Seeded here (from the authenticated
+// /assets/OURAx response) so the list is ready to merge the moment the IPO goes
+// live. Once the public API serves OURAx the seed is deduplicated away, but it
+// should still be deleted then. Only the fields transformAssetsToTokens reads
+// are kept.
+const PRESEEDED_ASSETS = [
+  {
+    name: 'Oura xStock',
+    symbol: 'OURAx',
+    logo: 'https://xstocks-metadata.backed.fi/logos/tokens/OURAx.png',
+    deployments: [
+      { network: 'Ethereum', address: '0xfb298d6dd4d7d0880b0be6108da4b896ccd0a4f0', supportsAtomicSwaps: true },
+      { network: 'BinanceSmartChain', address: '0xfb298d6dd4d7d0880b0be6108da4b896ccd0a4f0', supportsAtomicSwaps: true },
+      { network: 'Arbitrum', address: '0xfb298d6dd4d7d0880b0be6108da4b896ccd0a4f0', supportsAtomicSwaps: false },
+      { network: 'Solana', address: 'XsAbH6dUktyMgYWPHxqoiDBYE7p9YdVzMQsGNWPKpzC', supportsAtomicSwaps: true },
+      { network: 'Ton', address: 'EQAsdAR3HKmWdheZj9MITf3EpVKkYxmvohx0SyIf6GkWr7P9', supportsAtomicSwaps: false },
+      { network: 'Mantle', address: '0xfb298d6dd4d7d0880b0be6108da4b896ccd0a4f0', supportsAtomicSwaps: true },
+      { network: 'HyperEVM', address: '0xfb298d6dd4d7d0880b0be6108da4b896ccd0a4f0', supportsAtomicSwaps: true },
+      { network: 'Ink', address: '0xfb298d6dd4d7d0880b0be6108da4b896ccd0a4f0', supportsAtomicSwaps: true },
+      { network: 'XLayer', address: '0xfb298d6dd4d7d0880b0be6108da4b896ccd0a4f0', supportsAtomicSwaps: true },
+      { network: 'Optimism', address: '0xfb298d6dd4d7d0880b0be6108da4b896ccd0a4f0', supportsAtomicSwaps: true }
+    ]
+  }
+];
+
 function transformAssetsToTokens(assets) {
-  // SHEIN xStock (ISIN CH1588660667) is deployed but still Private, so the API
-  // does not return it yet. Seeded here so the list is ready to merge the moment
-  // the IPO goes live; delete this block once the API serves SHEINx, otherwise
-  // these entries will be duplicated.
-  // Solana (Xs8w8HvDjT1DxYeHzhSkRT8wYUahJB9kRC7Fuiic2Hf) is omitted: not in CHAIN_IDS.
-  const tokens = [
-    {
-      chainId: CHAIN_IDS.Ethereum,
-      address: '0x4d0ba049c430a7a80a61e7ebdf50b6daac6c3bd6',
-      name: 'SHEIN xStock',
-      symbol: 'SHEINx',
-      decimals: XSTOCKS_DECIMALS,
-      logoURI: 'https://xstocks-metadata.backed.fi/logos/tokens/SHEINx.png',
-      tags: ['xStocks']
-    },
-    {
-      chainId: CHAIN_IDS.BinanceSmartChain,
-      address: '0x4d0ba049c430a7a80a61e7ebdf50b6daac6c3bd6',
-      name: 'SHEIN xStock',
-      symbol: 'SHEINx',
-      decimals: XSTOCKS_DECIMALS,
-      logoURI: 'https://xstocks-metadata.backed.fi/logos/tokens/SHEINx.png',
-      tags: ['xStocks']
-    },
-    {
-      chainId: CHAIN_IDS.Optimism,
-      address: '0x4d0ba049c430a7a80a61e7ebdf50b6daac6c3bd6',
-      name: 'SHEIN xStock',
-      symbol: 'SHEINx',
-      decimals: XSTOCKS_DECIMALS,
-      logoURI: 'https://xstocks-metadata.backed.fi/logos/tokens/SHEINx.png',
-      tags: ['xStocks']
-    },
-    {
-      chainId: CHAIN_IDS.Mantle,
-      address: '0x4d0ba049c430a7a80a61e7ebdf50b6daac6c3bd6',
-      name: 'SHEIN xStock',
-      symbol: 'SHEINx',
-      decimals: XSTOCKS_DECIMALS,
-      logoURI: 'https://xstocks-metadata.backed.fi/logos/tokens/SHEINx.png',
-      tags: ['xStocks']
-    },
-    {
-      chainId: CHAIN_IDS.HyperEVM,
-      address: '0x4d0ba049c430a7a80a61e7ebdf50b6daac6c3bd6',
-      name: 'SHEIN xStock',
-      symbol: 'SHEINx',
-      decimals: XSTOCKS_DECIMALS,
-      logoURI: 'https://xstocks-metadata.backed.fi/logos/tokens/SHEINx.png',
-      tags: ['xStocks']
-    },
-    {
-      chainId: CHAIN_IDS.Ink,
-      address: '0x4d0ba049c430a7a80a61e7ebdf50b6daac6c3bd6',
-      name: 'SHEIN xStock',
-      symbol: 'SHEINx',
-      decimals: XSTOCKS_DECIMALS,
-      logoURI: 'https://xstocks-metadata.backed.fi/logos/tokens/SHEINx.png',
-      tags: ['xStocks']
-    },
-    {
-      chainId: CHAIN_IDS.XLayer,
-      address: '0x4d0ba049c430a7a80a61e7ebdf50b6daac6c3bd6',
-      name: 'SHEIN xStock',
-      symbol: 'SHEINx',
-      decimals: XSTOCKS_DECIMALS,
-      logoURI: 'https://xstocks-metadata.backed.fi/logos/tokens/SHEINx.png',
-      tags: ['xStocks']
-    }
-  ];
+  const tokens = [];
+  // Dedupe on chainId + address so an asset fetched by ticker or preseeded is
+  // not duplicated once the public API also returns it (first occurrence wins)
+  const seen = new Set();
 
   for (const asset of assets) {
     for (const deployment of asset.deployments) {
       if (!deployment.supportsAtomicSwaps) continue;
       const chainId = CHAIN_IDS[deployment.network];
       if (chainId === undefined) continue;
+      const key = `${chainId}-${deployment.address.toLowerCase()}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
 
       tokens.push({
         chainId,
@@ -584,11 +572,19 @@ if (require.main === module) {
   (async () => {
     try {
       const args = process.argv.slice(2);
+      const isFileArg = args.length === 1 && args[0].endsWith('.json');
 
-      if (args.length === 0) {
-        // Default: fetch live from the xStocks API
+      if (!isFileArg) {
+        // Default: fetch live from the xStocks API, plus any tickers passed as
+        // args (fetched with BACKED_API_KEY so Private assets are included)
+        // and the preseeded assets
         const assets = await fetchAllAssets();
         console.log(`Fetched ${assets.length} assets from API`);
+        for (const ticker of args) {
+          assets.push(await fetchAsset(ticker));
+          console.log(`Fetched ${ticker} by ticker`);
+        }
+        assets.push(...PRESEEDED_ASSETS);
         const tokens = transformAssetsToTokens(assets);
         console.log(`Transformed to ${tokens.length} token entries\n`);
         await replaceTokens(tokens);
@@ -608,4 +604,4 @@ if (require.main === module) {
   })();
 }
 
-module.exports = { updateTokenList, replaceTokens, calculateVersionBump, fetchAllAssets, transformAssetsToTokens, CHAIN_IDS };
+module.exports = { updateTokenList, replaceTokens, calculateVersionBump, fetchAllAssets, fetchAsset, transformAssetsToTokens, CHAIN_IDS };
