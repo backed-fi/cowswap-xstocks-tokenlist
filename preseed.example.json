@@ -1,0 +1,23 @@
+{
+  "EXAMPLEx": {
+    "name": "Example xStock",
+    "symbol": "EXAMPLEx",
+    "deployments": [
+      {
+        "network": "Ethereum",
+        "address": "0x0000000000000000000000000000000000000000",
+        "supportsAtomicSwaps": true
+      },
+      {
+        "network": "BinanceSmartChain",
+        "address": "0x0000000000000000000000000000000000000000",
+        "supportsAtomicSwaps": true
+      },
+      {
+        "network": "Arbitrum",
+        "address": "0x0000000000000000000000000000000000000000",
+        "supportsAtomicSwaps": false
+      }
+    ]
+  }
+}
